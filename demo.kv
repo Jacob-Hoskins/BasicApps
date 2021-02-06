@@ -1,0 +1,22 @@
+Screen:
+
+    MDTextField:
+        id: username
+        hint_text: "Username"
+        pos_hint: {'center_x': .5, 'center_y': .6}
+        size_hint_x: .5
+        icon_right: "account"
+
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        pos_hint: {'center_x': .5, 'center_y': .4}
+        size_hint_x: .5
+        password: True
+        icon_right: "key-variant"
+
+    MDRaisedButton:
+        text: "Login"
+        pos_hint: {'center_x': .5, 'center_y': .3}
+        on_release: app.show_input()
+
