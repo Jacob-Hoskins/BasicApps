@@ -27,28 +27,27 @@ class MyLayout(Widget):
         prior = self.ids.calc_input.text
         self.ids.calc_input.text = f'{prior}{sign}'
 
-
     def equals(self):
         prior = self.ids.calc_input.text
         #addition
         if "+" in prior:
             num_list = prior.split("+")
-            answer = 0
+            answer = 0.0
 
             # loop through list:
             for number in num_list:
-                answer = answer + int(number)
+                answer = answer + float(number)
 
             print(answer)
             self.ids.calc_input.text = str(answer)
 
         if "-" in prior:
             num_list = prior.split("-")
-            answer = 0
+            answer = 0.0
 
             # loop through list:
             for number in num_list:
-                answer = answer - int(number)
+                answer = answer - float(number)
 
             print(answer)
             self.ids.calc_input.text = str(answer)
@@ -59,7 +58,7 @@ class MyLayout(Widget):
 
             # loop through list:
             for number in num_list:
-                answer = answer * int(number)
+                answer = answer * float(number)
 
             print(answer)
             self.ids.calc_input.text = str(answer)
@@ -70,10 +69,31 @@ class MyLayout(Widget):
 
             # loop through list:
             for number in num_list:
-                answer = answer / int(number)
+                answer = answer / float(number)
 
             print(answer)
             self.ids.calc_input.text = str(answer)
+
+    def dot(self):
+        prior = self.ids.calc_input.text
+
+        if "." in prior:
+            pass
+        else:
+            prior = f'{prior}.'
+            self.ids.calc_input.text = prior
+
+    def remove(self):
+        prior = self.ids.calc_input.text
+        prior = prior[:-1]
+        self.ids.calc_input.text = prior
+
+    def pos_neg(self):
+        prior = self.ids.calc_input.text
+        if "-" in prior:
+            self.ids.calc_input.text = f'{prior.replace("-", "")}'
+        else:
+            self.ids.calc_input.text = f'-{prior}'
 
 class Calculator(App):
 

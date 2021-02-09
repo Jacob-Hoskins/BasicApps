@@ -24,7 +24,8 @@
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
-                text: "CE"
+                text: u"\u00ab"
+                on_release: root.remove()
 
             Button:
                 id: clear
@@ -135,6 +136,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "+-"
+                on_release: root.pos_neg()
 
             Button:
                 size_hint: (.2, .2)
@@ -147,6 +149,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "."
+                on_release: root.dot()
 
             Button:
                 size_hint: (.2, .2)
